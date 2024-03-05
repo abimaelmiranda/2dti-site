@@ -1,0 +1,117 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+
+:root {
+    --default-font:
+        /*'Segoe UI'*/
+        "Open Sans";
+    --black-color: #292E33;
+    --white-color: #ffff;
+    --dark-blue-color: #0073FA;
+    --light-blue-color: #2F91FA;
+}
+
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    scroll-behavior: smooth;
+    height: 100vh;
+    font-family: var(--default-font);
+}
+
+header {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    justify-content: space-around;
+    background: var(--black-color);
+    width: 100%;
+    height: 10%;
+    font-size: 1.5rem;
+    box-shadow: 1px 1px 5px black;
+}
+
+header>img {
+    width: 80px;
+    height: 30px;
+}
+
+.nav-menu{
+    display: flex;
+    column-gap: 20px;
+}
+
+
+a {
+    position: relative;
+    display: block;
+    color: var(--white-color);
+    text-decoration: none;
+    padding: 5px;
+}
+
+a::after {
+    content: "";
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    height: 2px;
+    width: 0;
+    background: rgb(255, 255, 255);
+    transition: all 300ms ease-in-out;
+}
+
+a:hover::after {
+    width: 50%;
+    left: 25%;
+}
+
+
+section,
+main {
+    width: 100vw;
+    height: 100vh;
+}
+
+#inicio {
+    display: flex;
+    color: var(--white-color);
+    align-items: center;
+    background-image: url(../img/pen-4337524_1280.jpg);
+    background-position: top center;
+    background-size: cover;
+}
+
+.main-text-container{
+    display: flex;
+    align-items: flex-start;
+    row-gap: 15px;
+    flex-flow: column;
+    margin-left: 5%;
+    padding: 20px;
+    height: 40%;
+    width: 55%;
+    background-color: #292e33b0;
+}
+
+
+.blueBg {
+    color: var(--white-color);
+    background-color: var(--light-blue-color);
+}
+
+.whiteBg {
+    color: var(--black-color);
+    background-color: var(--white-color);
+}
+
