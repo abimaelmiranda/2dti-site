@@ -1,56 +1,40 @@
 (function () {
-    const imgs = document.querySelector(`.carousel`);
-    const img = document.querySelectorAll(`.carousel img`);
-    const currentWidth = () =>{
-        const wrapper = document.querySelector(".carousel-wrapper");
-        const style = window.getComputedStyle(wrapper);
-        const width = style.getPropertyValue(`width`);
+    function criarCarrossel(elemento, wrapperClass) {
+        const imgs = document.querySelector(elemento);
+        const img = document.querySelectorAll(`${elemento} img`);
+        const firstImgClone = img[0].cloneNode(true);
+        imgs.appendChild(firstImgClone);
 
-        const widthNum = parseFloat(width);
-        return widthNum;
-    }
-    let id = 0;
-
-    function carrouselSol() {
-        id++;
-
-        if (id > img.length - 1) {
-            id = 0;
+        const currentWidth = () => {
+            const wrapper = document.querySelector(wrapperClass);
+            const style = window.getComputedStyle(wrapper);
+            return parseFloat(style.getPropertyValue('width'));
         }
 
-        imgs.style.transform = `translateX(${-id * currentWidth()}px)`
+        let id = 0;
 
-    }
+        function carrossel() {
+            id++;
+            imgs.style.transition = 'transform 0.5s ease-in-out';
+            imgs.style.transform = `translateX(${-id * currentWidth()}px)`;
 
-    setInterval(carrouselSol, 1800);
-})();
-
-(function () {
-    const imgs = document.querySelector(`.gallery`);
-    const img = document.querySelectorAll(`.gallery img`);
-    const currentWidth = () =>{
-        const wrapper = document.querySelector(".gallery-wrapper");
-        const style = window.getComputedStyle(wrapper);
-        const width = style.getPropertyValue(`width`);
-
-        const widthNum = parseFloat(width);
-        return widthNum;
-    }
-     
-    let id = 0;
-
-    function carrouselClientes() {
-        id++;
-
-        if (id > img.length - 1) {
-            id = 0;
+            if (id == img.length) {
+                setTimeout(() => {
+                    imgs.style.transition = 'none';
+                    id = 0;
+                    imgs.style.transform = `translateX(0)`;
+                    setTimeout(() => {
+                        imgs.style.transition = 'transform 0.5s ease-in-out';
+                    }, 50);
+                }, 500);
+            }
         }
 
-        imgs.style.transform = `translateX(${-id * currentWidth()}px)`
-
+        setInterval(carrossel, 1800);
     }
 
-    setInterval(carrouselClientes, 1800)
 
+    criarCarrossel('.gallery', '.gallery-wrapper');
 
+    criarCarrossel('.carousel', '.carousel-wrapper');
 })();
