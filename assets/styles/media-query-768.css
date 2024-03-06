@@ -1,0 +1,38 @@
+.text-container h2 {
+    font-size: 4rem;
+}
+
+.text-container h3 {
+    font-size: 2rem;
+}
+
+.text-container p {
+    font-size: 1.5rem;
+}
+
+
+.facilita-section {
+    flex-flow: column nowrap;
+    
+}
+
+.sol-section {
+    flex-flow: column nowrap;
+    
+}
+
+
+
+
+.facilita-section .text-container {
+    width: 90rem;
+    padding: 1rem;
+    
+}
+
+.img-container {
+    height: 30rem;
+    width: 30rem;
+    margin-bottom: 10rem;
+}
+
