@@ -37,4 +37,5 @@
     criarCarrossel('.gallery', '.gallery-wrapper');
 
     criarCarrossel('.carousel', '.carousel-wrapper');
+
 })();
