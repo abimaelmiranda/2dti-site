@@ -266,11 +266,13 @@ main {
     align-items: center;
     flex-flow: column;
     text-align: center;
+    row-gap: 3.5rem;
+    height: auto;
 }
 
 .gallery-wrapper{
     overflow: hidden;
-    width: 50rem;
+    width: 45rem;
     border-radius:50%;
    box-shadow: 0.1rem 0.1rem 2rem var(--light-blue-color);
 }
@@ -290,7 +292,35 @@ main {
     object-fit: cover;
 }
 
+.reports{
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 1.3rem;
+    justify-content: space-around;
+    width: 100%;
+    height: fit-content;
+    
+}
 
+.report{
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-start;
+    align-items: center;
+    row-gap: 2.3rem;
+    width: 35rem;
+    height: 100%;
+    padding: 3rem;
+    color: var(--black-color);
+    box-shadow: 0.1rem 0.1rem 2rem var(--light-blue-color);
+    border: 1px solid var(--light-blue-color);
+    border-radius: 1rem;
+}
+
+.report img{
+    height: 25rem;
+    width: 20rem;
+}
 
 .blueBg {
     color: var(--white-color);
