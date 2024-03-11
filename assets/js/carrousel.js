@@ -1,7 +1,7 @@
 (function () {
-    function criarCarrossel(elemento, wrapperClass) {
-        const imgs = document.querySelector(elemento);
-        const img = document.querySelectorAll(`${elemento} img`);
+    function criarCarrossel(e, wrapperClass) {
+        const imgs = document.querySelector(e);
+        const img = document.querySelectorAll(`${e} img`);
         const firstImgClone = img[0].cloneNode(true);
         imgs.appendChild(firstImgClone);
 

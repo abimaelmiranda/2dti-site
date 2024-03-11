@@ -361,11 +361,12 @@ main {
     border: none;
     border-radius: 1rem;
     text-indent: 1rem;
+    box-shadow: 0.1rem 0.1rem 2rem var(--light-blue-color);
 }
 
 .form-send-bnt {
-    background-color: var(--white-color);
-    color: var(--light-blue-color);
+    background-color: var(--light-blue-color);
+    color: var(--white-color);
     width: 20rem;
     height: 6rem;
     padding: 1rem;
@@ -377,11 +378,16 @@ main {
 
 .form-field:focus {
     outline: none;
+    border: 0.1rem solid var(--light-blue-color);
 }
 
 .form-field::placeholder {
     font-family: var(--default-font);
     text-indent: 1rem;
+}
+
+.form-tarea {
+    height: 10rem;
 }
 
 .contact .location-container {
@@ -400,12 +406,23 @@ main {
 }
 
 
+.center-section {
+    display: flex;
+    flex-flow: column;
+}
+
+.center-section img {
+    width: 50px;
+    height: 50px;
+}
+
 footer {
     display: flex;
     align-items: center;
     justify-content: space-between;
     height: 50vh;
     padding: 5rem;
+    color: var(--white-color);
     background-color: var(--black-color);
 }
 
@@ -418,6 +435,7 @@ footer {
     width: 3rem;
     height: 3rem;
 }
+
 
 .blueBg {
     color: var(--white-color);
